@@ -68,9 +68,15 @@ class Lista
     }
     else
     {
+      int TNum = 1;
       while(i)
       {
-        cout << i -> obterValor() << endl;
+        if (i -> obterValor() == 1410065407){
+          cout << "Triangulo " << TNum << ":\n";
+          TNum++;
+        }
+        else
+          cout << "Cateto: " << i -> obterValor() << endl;
         i = i -> obterProximo();
       }
       cout << endl;

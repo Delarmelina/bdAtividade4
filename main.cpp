@@ -8,7 +8,8 @@ int main() {
   int selection = 0, bdLen = 0;
   char createTxt [200];
   string bdName = "";
-  
+  Lista list;
+
   cout << ("\nOque deseja fazer?\n\
 1 - Ler banco de dados!\n\
 2 - Escrever no banco de dados!\n\
@@ -16,7 +17,7 @@ Digite qualquer tecla para sair\n\
 Resposta:");
   cin >> selection;
 
-  while(selection == 1 || 2){
+  while(selection == 1 || selection == 2){
 
     switch(selection){
       case 1:

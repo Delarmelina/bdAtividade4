@@ -22,26 +22,30 @@ void readBd(){
     while(getline(bd, line))
       list.insereNoFim(stoi(line));
     bd.close();
-  list.imprimirElementos();
   }
 }
 
 // Escreve no banco de dados
 void writeBd(){
   string nameBd = "";
-  int bdLen = 0, value = 0;
+  int bdLen = 0, value = 0, triangles = 0, l1 = 0, l2 = 0;
   Lista list;
 
   cout << "Nome do banco de dados: ";
   cin >> nameBd; nameBd = nameBd + ".txt"; 
-  cout << "Quantidade de dados para serem armazenados: ";
-  cin >> bdLen; 
+  cout << "Quantos triangulos deseja armazenar: ";
+  cin >> triangles; 
+  cout << "Insira os 2 catetos de cada triangulo: \n";
 
   // Escreve na lista estruturada cada item pedido
-  for (int i = 0; i < bdLen; i++) {
-    cout << "Escreva o valor a ser armazenado: ";
-    cin >> value;
-    list.insereNoFim(value);
+  for (int i = 0; i < triangles; i++) {
+    cout << "Triangulo " << i+1 << " - Lado 1: ";
+    cin >> l1;
+    cout << "Triangulo " << i+1 << " - Lado 2: ";
+    cin >> l2;
+    list.insereNoFim(1410065407);
+    list.insereNoFim(l1);
+    list.insereNoFim(l2);
   }
 
   No* iD = list.inicio; // Nós incial
