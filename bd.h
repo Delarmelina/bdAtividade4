@@ -9,15 +9,19 @@ void readBd(){
   string nameBd = "", line = "";
   Lista list;
 
-  cout << "Nome do banco de dados: ";
+  cout << "\nNome do banco de dados: ";
   cin >> nameBd; nameBd = nameBd + ".txt"; 
 
   ifstream bd (nameBd);
-  while(getline(bd, line))
-    list.insereNoFim(stoi(line));
-  bd.close();
 
+  if(bd.fail()){
+      cout << "Esse banco de dados não existe!!!\n";
+  }else{
+    while(getline(bd, line))
+      list.insereNoFim(stoi(line));
+    bd.close();
   list.imprimirElementos();
+  }
 }
 
 // Escreve no banco de dados
