@@ -10,10 +10,10 @@ int main() {
   string bdName = "";
   
   cout << ("\nOque deseja fazer?\n\
-  1 - Ler banco de dados!\n\
-  2 - Escrever no banco de dados!\n\
-  3 - Criar banco de dados!\n\
-  Resposta:");
+1 - Ler banco de dados!\n\
+2 - Escrever no banco de dados!\n\
+Digite qualquer tecla para sair\n\
+Resposta:");
   cin >> selection;
 
   while(selection == 1 || selection == 2 || selection == 3){
@@ -27,17 +27,13 @@ int main() {
         // Escrever no banco de dados
           writeBd();
         break;
-      case 3:
-        // Criar banco de dados
-          addBd();
-        break;
     }
 
-    cout << ("\nOque deseja fazer?\n\
-      1 - Ler banco de dados!\n\
-      2 - Escrever no banco de dados!\n\
-      3 - Criar banco de dados!\n\
-      Resposta:");
+      cout << ("\nOque deseja fazer?\n\
+1 - Ler banco de dados!\n\
+2 - Escrever no banco de dados!\n\
+Digite qualquer tecla para sair\n\
+Resposta:");
     cin >> selection;
   }
 }
