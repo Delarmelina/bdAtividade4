@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
-//#include "Lista.h"
+#include "Lista.h"
+
+using namespace std;
 
 // Cria um banco de dados
 void addBd(){
@@ -16,7 +18,23 @@ void addBd(){
 
 // Ler um baco de dados
 void readBd(){
+  string nameBd = "", line = "";
+  int lenLines = 0;
 
+  cout << "Nome do banco de dados: ";
+  cin >> nameBd; nameBd = nameBd + ".txt"; 
+
+  while (getline(nameBd, line))
+    ++lenLines;
+  cout << lenLines;
+
+  //Lista list;
+  //ifstream bd (nameBd);
+  //  while (i < 15) {
+  //    entrada >> novo;
+  //    l.insereNoFim(novo);
+  //    i++;
+  //  }
 }
 
 // Escreve no banco de dados
@@ -37,8 +55,9 @@ void writeBd(){
     list.insereNoFim(value);
   }
 
-  No* iD = list.inicio;
+  No* iD = list.inicio; // Nós incial
 
+  // Escreve da lista estruturada para o banco de dados txt
   while(iD){
     ofstream bD (nameBd, ios::app);
     bD << iD -> obterValor() << endl;
