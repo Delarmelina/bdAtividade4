@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "Lista.h"
+#include <string>
 
 using namespace std;
 
@@ -19,22 +19,21 @@ void addBd(){
 // Ler um baco de dados
 void readBd(){
   string nameBd = "", line = "";
-  int lenLines = 0;
+  Lista list;
 
   cout << "Nome do banco de dados: ";
   cin >> nameBd; nameBd = nameBd + ".txt"; 
-
-  while (getline(nameBd, line))
-    ++lenLines;
-  cout << lenLines;
-
-  //Lista list;
+  
   //ifstream bd (nameBd);
-  //  while (i < 15) {
-  //    entrada >> novo;
-  //    l.insereNoFim(novo);
-  //    i++;
-  //  }
+  //for(lenLines = 0; getline(bd, line); lenLines++);
+  //bd.close();
+
+  ifstream bd (nameBd);
+  while(getline(bd, line))
+    list.insereNoFim(stoi(line));
+  bd.close();
+
+  list.imprimirElementos();
 }
 
 // Escreve no banco de dados
