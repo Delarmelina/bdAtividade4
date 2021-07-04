@@ -1,4 +1,5 @@
 #include <iostream>
+#include "trg.h"
 
 using namespace std;
 
@@ -68,15 +69,29 @@ class Lista
     }
     else
     {
-      int TNum = 1;
+      int TNum = 1, TCat = 1, Cat1= 0, Cat2 = 0;
+      float hip = 0;
       while(i)
       {
         if (i -> obterValor() == 1410065407){
           cout << "Triangulo " << TNum << ":\n";
           TNum++;
         }
-        else
-          cout << "Cateto: " << i -> obterValor() << endl;
+        else{
+          if (TCat == 1){
+            cout << "Cateto "<< TCat << ": " << i -> obterValor() << endl;
+            Cat1 = i -> obterValor();
+            TCat = 2;
+          }else{
+            cout << "Cateto "<< TCat << ": " << i -> obterValor() << endl;
+            Cat2 = i -> obterValor();
+            hip = calcularHipotenusa(Cat1, Cat2);
+            cout << "Hipotenusa: " << hip << endl; 
+            calcularArea(Cat1, Cat2);
+            calcularPerimetro(Cat1, Cat2, hip);
+            TCat = 1;
+          }
+        }
         i = i -> obterProximo();
       }
       cout << endl;

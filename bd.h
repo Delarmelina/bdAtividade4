@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <math.h> 
 
 using namespace std;
 
@@ -23,6 +24,7 @@ void readBd(){
       list.insereNoFim(stoi(line));
     bd.close();
   }
+  list.imprimirElementos();
 }
 
 // Escreve no banco de dados
@@ -57,4 +59,7 @@ void writeBd(){
     iD = iD -> obterProximo();
     bD.close();
   }
+
+  cout << endl;
+  list.imprimirElementos();
 }    
