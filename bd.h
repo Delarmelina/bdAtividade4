@@ -9,11 +9,13 @@ void readBd(){
   string nameBd = "", line = "";
   Lista list;
 
+  // Busca o nome do banco de dados
   cout << "\nNome do banco de dados: ";
   cin >> nameBd; nameBd = nameBd + ".txt"; 
 
-  ifstream bd (nameBd);
+  ifstream bd (nameBd); // Abre o arquivo
 
+  // Identifica se o banco existe, caso existir pega cada item do banco de dados e insere na lista
   if(bd.fail()){
       cout << "Esse banco de dados não existe!!!\n";
   }else{
@@ -35,7 +37,7 @@ void writeBd(){
   cout << "Quantidade de dados para serem armazenados: ";
   cin >> bdLen; 
 
-  // Escreve na lista estruturada
+  // Escreve na lista estruturada cada item pedido
   for (int i = 0; i < bdLen; i++) {
     cout << "Escreva o valor a ser armazenado: ";
     cin >> value;

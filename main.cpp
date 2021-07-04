@@ -16,7 +16,7 @@ Digite qualquer tecla para sair\n\
 Resposta:");
   cin >> selection;
 
-  while(selection == 1 || selection == 2 || selection == 3){
+  while(selection == 1 || 2){
 
     switch(selection){
       case 1:
